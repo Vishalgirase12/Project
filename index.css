@@ -1,0 +1,696 @@
+/* Reset and Base */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
+}
+
+/* Global Button */
+.btn-custom {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+  color: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-custom:hover {
+  background: linear-gradient(135deg, #355c7d, #6c5b7b);
+  transform: scale(1.05);
+}
+
+/* Card Hover Effect */
+.product-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Hero Section with Video Background */
+.hero-video-section {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.hero-background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.5);
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.hero-overlay h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  animation: fadeInDown 1s ease;
+}
+
+.hero-overlay p {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  animation: fadeInUp 1s ease;
+}
+
+/* Fade Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* About Section */
+.about-section {
+  padding: 40px 20px;
+  text-align: center;
+  background: #ffffff;
+}
+
+.about-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Features Section */
+.features {
+  background: #f1f3f5;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.features .feature-icon {
+  height: 80px;
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+/* Slider Images */
+.slider-img {
+  height: 400px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: #1c1e22;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.contact-section a {
+  color: #61dafb;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 600;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+/* Footer */
+.footer {
+  background-color: #111;
+  padding: 20px;
+  color: #ccc;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero-video-section {
+    height: 60vh;
+    padding: 20px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+
+  .slider-img {
+    height: 200px;
+  }
+
+  .contact-section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.logo-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 15, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+  cursor: zoom-out;
+}
+
+.zoomed-logo {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+  transition: transform 0.3s;
+}
+
+.navbar {
+  position: relative;
+  z-index: 10;
+}
+
+
+/* --- Image Zoom Modal --- */
+.zoomable {
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+
+.zoomable:hover {
+  transform: scale(1.05);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+}
+
+/* --- Floating Search Box (in Hero Section) --- */
+.search-bar {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  animation: fadeInUp 1.2s ease;
+}
+
+.search-bar input {
+  width: 300px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 30px 0 0 30px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #ff6b6b;
+  color: white;
+  border-radius: 0 30px 30px 0;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+  background-color: #fa5252;
+}
+
+/* --- Testimonials Section --- */
+.testimonials {
+  padding: 50px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.testimonial-card {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.03);
+}
+
+.testimonial-author {
+  font-weight: bold;
+  color: #4b6cb7;
+  margin-top: 10px;
+}
+
+/* --- Button Pulse Animation --- */
+@keyframes pulse {
+  s 0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn-custom.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* --- Responsive Testimonials --- */
+@media (max-width: 768px) {
+  .search-bar {
+    flex-direction: column;
+  }
+
+  .search-bar input {
+    width: 100%;
+    border-radius: 30px 30px 0 0;
+  }
+
+  .search-bar button {
+    width: 100%;
+    border-radius: 0 0 30px 30px;
+  }
+
+  .testimonial-card {
+    margin: 10px 0;
+  }
+}
+
+/* --- Navbar Styling Enhancements --- */
+
+.navbar {
+  background-color: #000 !important;
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+  color: #fff !important;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #0dcaf0 !important;
+  transform: scale(1.05);
+}
+
+.navbar-text {
+  color: #0dcaf0 !important;
+}
+
+.navbar-collapse {
+  transition: all 0.3s ease-in-out;
+}
+
+.login-form {
+  background-color: rgba(255, 255, 255, 0.85);
+  /* semi-transparent white */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  /* for Safari */
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+  animation: fadeInUp 0.7s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Register Wrapper */
+.register-wrapper {
+  min-height: 100vh;
+  padding: 60px 15px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Register Form Styling */
+.register-form {
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Friendly Inputs */
+.register-form .form-control {
+  font-size: 1rem;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+.register-form h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .register-form {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .register-form h2 {
+    font-size: 1.5rem;
+  }
+
+  .register-form .form-control {
+    font-size: 0.95rem;
+  }
+}
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.register-form {
+  width: 100%;
+  max-width: 450px;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  animation: fadeInUp 0.8s ease;
+}
+
+@media (max-width: 576px) {
+  .register-form {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .register-form h2 {
+    font-size: 1.6rem;
+  }
+}
+
+
+
+/* Booking Page Custom Styles */
+body.booking-page {
+  background-image: url('./img/booking2.png');
+  /* Update with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  animation: zoomBackground 20s ease-in-out infinite alternate;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+@keyframes zoomBackground {
+  0% {
+    background-size: 100%;
+  }
+
+  100% {
+    background-size: 110%;
+  }
+}
+
+/* Stylish booking form */
+.booking-form-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  width: 400px;
+  margin: 80px auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  animation: fadeInZoom 1s ease;
+  transition: transform 0.3s ease;
+}
+
+.booking-form-container:hover {
+  transform: scale(1.02);
+}
+
+/* Animation for form */
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.booking-form-container h2 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+.booking-form-container input,
+.booking-form-container select,
+.booking-form-container textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  outline: none;
+}
+
+.booking-form-container input::placeholder,
+.booking-form-container textarea::placeholder {
+  color: #eee;
+}
+
+.booking-form-container button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #ff6f61;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.booking-form-container button:hover {
+  background: #e85c50;
+}
+
+.product-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #343a40;
+}
+
+.product-category {
+  font-size: 1rem;
+  margin-top: -10px;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  color: #28a745;
+}
+
+textarea,
+input[type="tel"] {
+  border-radius: 8px;
+}
+
+.btn-success {
+  font-size: 1.1rem;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.text-danger {
+  font-size: 0.9rem;
+  margin-top: 5px;
+  display: block;
+}
+
+@media (max-width: 576px) {
+  .booking-container {
+    padding: 10px;
+  }
+
+  .booking-card {
+    padding: 20px 15px;
+  }
+
+  .product-name {
+    font-size: 1.5rem;
+  }
+
+  .btn-success {
+    font-size: 1rem;
+  }
+}
+
+
+
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+/* Product.css */
+
+.bg-light-available {
+  background-color: #e1f7e7;
+  /* soft green */
+}
+
+.bg-light-purchased {
+  background-color: #f8d7da;
+  /* soft red/pink */
+}
