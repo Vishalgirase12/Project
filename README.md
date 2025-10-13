@@ -19,4 +19,4 @@ Tools: VS Code, IntelliJ IDEA / Eclipse, Postman, Git
 🧮 Modules:-
 User Module: Registration, Login, Logout
 Book Module: Add, View, Edit, Delete Books
-Admin Module: Manage Users & Books
+Admin Module: Manage Users & Books.
